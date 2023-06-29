@@ -1,10 +1,21 @@
 import './App.css';
+import Sidebar from "./Sidebar";
 
 function App() {
   return (
     // BEM
     <div className="app">
-    <h1> Hello World!</h1>   
+    <h1> I love kimmy !❤️</h1>   
+
+    {/* COMPONENTS  */}
+    {/* Sidebar */}
+    <Sidebar/>
+    
+    {/* Feed */}
+
+    {/* Widgets */}
+
+
     </div>
   );
 }
