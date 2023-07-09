@@ -1,46 +1,67 @@
 .post {
-    display: flex;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--twitter-background);
-    padding-bottom: 10px;
-  }
-  
-  .post__body {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .post__body > img {
-    border-radius: 20px;
-  }
-  
-  .post__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .post__headerDescription {
-    margin-bottom: 10px;
-    font-size: 15px;
-  }
-  
-  .post__headerText > h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  
-  .post__badge {
-    font-size: 14px !important;
-    color: var(--twitter-color);
-  }
-  
-  .post__headerSpecial {
-    font-weight: 600;
-    font-size: 12px;
-    color: gray;
-  }
-  
-  .post__avatar {
-    padding: 20px;
-  }
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--twitter-background);
+  padding-bottom: 10px;
+}
+
+.post__body {
+  flex: 1;
+  padding: 10px;
+}
+
+.post__body > img {
+  border-radius: 20px;
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.post__headerDescription {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.post__headerText > h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.post__badge {
+  font-size: 14px !important;
+  color: var(--twitter-color);
+}
+
+.post__headerSpecial {
+  font-weight: 600;
+  font-size: 12px;
+  color: gray;
+}
+
+.post__avatar {
+  padding: 20px;
+}
+/* 
+  <ChatBubbleOutlineIcon className="comment__Icon"fontSize="small" />
+  <RepeatIcon className="retweet__Icon" fontSize="small" />
+  <FavoriteBorderIcon className="likes__Icon" fontSize="small" />
+  <PublishIcon className="share__Icon" fontSize="small" /> */
+
+.comment__Icon:hover {
+  color: var(--twitter-color);
+}
+
+.retweet__Icon:hover {
+  color: green;
+}
+
+.likes__Icon:hover {
+  color: red;
+}
+
+.share__Icon:hover {
+  color: var(--twitter-color);
+}

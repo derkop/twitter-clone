@@ -17,6 +17,7 @@ function Widgets() {
 
       <div className="widgets__widgetContainer">
         <h2>What's happening</h2>
+        <TwitterShareButton/>
       </div>
     </div>
   );

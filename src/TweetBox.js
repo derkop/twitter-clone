@@ -10,6 +10,11 @@ function TweetBox() {
                 <Avatar src="https://i.imgur.com/FfoL3nU.jpg"></Avatar>
                 <input placeholder="What's happening?" type="text"></input>
             </div>
+            <input
+            className="tweetBox__imageInput"
+            placeholder='Optional: Enter image URL'
+            type="text"
+            />
             <Button className='tweetBox__tweetButton' disableRipple>Tweet</Button>
         </form>
     </div>

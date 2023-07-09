@@ -1,11 +1,11 @@
 import React, { forwardRef } from "react";
 import "./Post.css";
-import { Avatar } from "@mui/icons-material/core";
+import { Avatar } from "@mui/material";
 import VerifiedIcon from '@mui/icons-material/Verified';
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import RepeatIcon from "@mui/icons-material/Repeat";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import PublishIcon from "@mui/icons-material/Publish";
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PublishIcon from '@mui/icons-material/Publish';
+import RepeatIcon from '@mui/icons-material/Repeat';
 
 const Post = forwardRef(
   ({ displayName, username, verified, text, image, avatar }, ref) => {
@@ -31,10 +31,10 @@ const Post = forwardRef(
           </div>
           <img src={image} alt="" />
           <div className="post__footer">
-            <ChatBubbleOutlineIcon fontSize="small" />
-            <RepeatIcon fontSize="small" />
-            <FavoriteBorderIcon fontSize="small" />
-            <PublishIcon fontSize="small" />
+            <ChatBubbleOutlineIcon className="comment__Icon"fontSize="small" />
+            <RepeatIcon className="retweet__Icon" fontSize="small" />
+            <FavoriteBorderIcon className="likes__Icon" fontSize="small" />
+            <PublishIcon className="share__Icon" fontSize="small" />
           </div>
         </div>
       </div>
