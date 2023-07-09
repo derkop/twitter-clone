@@ -11,7 +11,12 @@ function Feed() {
       
     <TweetBox/>
 
-    <Post/>
+    <Post 
+    displayName="Derrick Ko"
+    username="derrick.ko"
+    verified={true}
+    text= "HIII KIMMY"
+    />
 
     </div>
   );

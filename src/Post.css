@@ -44,24 +44,23 @@
 .post__avatar {
   padding: 20px;
 }
-/* 
-  <ChatBubbleOutlineIcon className="comment__Icon"fontSize="small" />
-  <RepeatIcon className="retweet__Icon" fontSize="small" />
-  <FavoriteBorderIcon className="likes__Icon" fontSize="small" />
-  <PublishIcon className="share__Icon" fontSize="small" /> */
 
 .comment__Icon:hover {
   color: var(--twitter-color);
+  cursor: pointer;
 }
 
 .retweet__Icon:hover {
   color: green;
+  cursor: pointer;
 }
 
 .likes__Icon:hover {
   color: red;
+  cursor: pointer;
 }
 
 .share__Icon:hover {
   color: var(--twitter-color);
+  cursor: pointer;
 }

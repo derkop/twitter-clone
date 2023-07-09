@@ -4,6 +4,7 @@
     margin-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    min-width: 250px;
   }
 
 .sidebar__tweet {
@@ -23,7 +24,9 @@
 
 .twitter__icon {
     color: var(--twitter-color);
-    transform: scale(1.3);
+    font-size: 30px !important;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
   
