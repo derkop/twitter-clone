@@ -1,5 +1,5 @@
-// import { initializeApp } from "firebase/app";
-// import { getFirestore } from "@firebase/firestore"
+// import { initializeApp } from 'firebase/app';
+// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyCNaDpFpeNCfrWPuEvBAJIwQTKvNbuKtjo",
@@ -11,5 +11,13 @@
 //   measurementId: "G-C7J1YVYE49"
 // };
 
-// const app = initializeApp(firebaseConfig);
-// export const firestore = getFirestore(app)
+// // // Initialize Firebase
+// // const app = initializeApp(firebaseConfig);
+// // const db = getFirestore(app);
+
+
+// const firebaseApp = initializeApp(firebaseConfig);
+// const db = getFirestore(firebaseApp);
+// const post = collection(db, 'key', 'displayName', 'username', 'verified', 'text', 'avatar', 'image');
+
+// export default db;
