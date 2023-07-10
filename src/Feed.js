@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
-// import db from "./firebase";
+import db from "./firebase";
+import { collection, onSnapshot} from "firebase/firestore"; 
+
 
 function Feed() {
-  // const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   db.collection("posts").onSnapshot((snapshot) =>
-  //     setPosts(snapshot.docs.map((doc) => doc.data()))
-  //   );
-  // }, []);
+  useEffect(() => {
+    onSnapshot(collection(db,"posts"), (snapshot) =>
+      setPosts(snapshot.docs.map((doc) => doc.data()))
+    );
+  }, []);
 
   return (
     <div className="feed">
@@ -21,38 +23,27 @@ function Feed() {
 
       <TweetBox />
 
-      {/* {posts.map((post) => (
+      {posts.map((post) => (
         <Post
-          key={post.text}
           displayName={post.displayName}
           username={post.username}
           verified={post.verified}
           text={post.text}
           avatar={post.avatar}
           image={post.image}
+        />
+        ))}
+
+        {/* <Post 
+          displayName="Derrick Ko"
+          username="derrick.ko"
+          verified={true}
+          text= "HIII KIMMY"
+          avatar="https://i.imgur.com/TOQO1Bz.jpg"
+          image="https://media4.giphy.com/media/LpoT1DojgcyW9QrCil/giphy.gif?cid=ecf05e47rl9pr66asj9rvoew4cqp5u16v6egowrl6e7gtmg3&ep=v1_gifs_search&rid=giphy.gif&ct=g"
         /> */}
-
-      <Post 
-      displayName="Derrick Ko"
-      username="derrick.ko"
-      verified={true}
-      text= "HIII KIMMY"
-      avatar="https://i.imgur.com/TOQO1Bz.jpg"
-      image="https://media4.giphy.com/media/LpoT1DojgcyW9QrCil/giphy.gif?cid=ecf05e47rl9pr66asj9rvoew4cqp5u16v6egowrl6e7gtmg3&ep=v1_gifs_search&rid=giphy.gif&ct=g"
-      />
-
-      ))}
     </div>
   );
 }
 
 export default Feed;
-
-{/* <Post 
-displayName="Derrick Ko"
-username="derrick.ko"
-verified={true}
-text= "HIII KIMMY"
-avatar="https://i.imgur.com/TOQO1Bz.jpg"
-image="https://media4.giphy.com/media/LpoT1DojgcyW9QrCil/giphy.gif?cid=ecf05e47rl9pr66asj9rvoew4cqp5u16v6egowrl6e7gtmg3&ep=v1_gifs_search&rid=giphy.gif&ct=g"
-/> */}
