@@ -19,6 +19,9 @@ npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 ```
 npm i react-twitter-embed
 ```
+```
+npm i react-flip-move
+```
 
 ### `npm start`
 

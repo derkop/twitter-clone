@@ -23,6 +23,7 @@
 .post__headerDescription {
   margin-bottom: 10px;
   font-size: 15px;
+  word-break: break-all;
 }
 
 .post__headerText > h3 {

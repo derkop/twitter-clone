@@ -12,6 +12,9 @@
   .tweetBox__input {
     padding: 20px;
     display: flex;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
   
   .tweetBox__input > input {
@@ -20,14 +23,15 @@
     font-size: 20px;
     border: none;
     outline: none;
+    overflow-wrap: break-word;
 }
   
-  .tweetBox__imageInput {
-    border: none;
-    padding: 10px;
-    outline: none;
+.tweetBox__imageInput {
+  border: none;
+  padding: 10px;
+  outline: none;
 }
-  
+
   .tweetBox__tweetButton {
     background-color: var(--twitter-color) !important;
     border: none !important;
