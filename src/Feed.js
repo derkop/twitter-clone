@@ -31,8 +31,9 @@ function Feed() {
           text={post.text}
           avatar={post.avatar}
           image={post.image}
+          timestamp={post.timestamp}
         />
-        ))}
+      ))}
 
         {/* <Post 
           displayName="Derrick Ko"
@@ -41,6 +42,7 @@ function Feed() {
           text= "HIII KIMMY"
           avatar="https://i.imgur.com/TOQO1Bz.jpg"
           image="https://media4.giphy.com/media/LpoT1DojgcyW9QrCil/giphy.gif?cid=ecf05e47rl9pr66asj9rvoew4cqp5u16v6egowrl6e7gtmg3&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+          timestamp="5min"
         /> */}
     </div>
   );

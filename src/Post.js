@@ -8,7 +8,7 @@ import PublishIcon from '@mui/icons-material/Publish';
 import RepeatIcon from '@mui/icons-material/Repeat';
 
 const Post = forwardRef(
-  ({ displayName, username, verified, text, image, avatar }, ref) => {
+  ({ displayName, username, verified, text, image, avatar, timestamp }, ref) => {
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">
@@ -21,7 +21,7 @@ const Post = forwardRef(
                 {displayName}{" "}
                 <span className="post__headerSpecial">
                   {verified && <VerifiedIcon className="post__badge" />} @
-                  {username}
+                  {username} · {timestamp}
                 </span>
               </h3>
             </div>
