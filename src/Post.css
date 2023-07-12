@@ -6,7 +6,6 @@
 }
 
 .post__body {
-  flex: 1;
   padding: 10px;
 }
 
@@ -17,7 +16,6 @@
 .post__footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 .post__headerDescription {
@@ -47,21 +45,21 @@
 }
 
 .comment__Icon:hover {
-  color: var(--twitter-color);
+  color: var(--twitter-color) !important;
   cursor: pointer;
 }
 
 .retweet__Icon:hover {
-  color: green;
+  color: green !important;
   cursor: pointer;
 }
 
 .likes__Icon:hover {
-  color: red;
+  color: red !important; 
   cursor: pointer;
 }
 
 .share__Icon:hover {
-  color: var(--twitter-color);
+  color: var(--twitter-color) !important;
   cursor: pointer;
 }
