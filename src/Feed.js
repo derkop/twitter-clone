@@ -17,6 +17,7 @@ function Feed() {
           id: doc.id,
           ...doc.data(),
         }))
+        .filter((post) => post.timestamp !== null) // Exclude posts with null timestamp
         .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds); // Sort posts in descending order
 
       setPosts(sortedPosts);
