@@ -1,34 +1,30 @@
-// TweetBox.js
 import React, { useState } from 'react';
 import './TweetBox.css';
 import { Avatar, Button } from '@mui/material';
 import db from './firebase';
-import { collection, addDoc } from 'firebase/firestore';
-import { setDocId } from './globals.js';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import moment from 'moment';
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState('');
   const [tweetImage, setTweetImage] = useState('');
 
-  const postsRef = collection(db, 'posts');
+  const postsRef = collection(db, 'testing');
 
   const MAX_CHARACTER_LIMIT = 280;
 
   const sendTweet = async (e) => {
     e.preventDefault();
 
-    const docRef = await addDoc(postsRef, {
+    await addDoc(postsRef, {
       displayName: 'Derrick Ko',
       username: 'derrick.ko',
       verified: true,
       text: tweetMessage,
       image: tweetImage,
       avatar: 'https://i.imgur.com/FfoL3nU.jpg',
-      timestamp: '5h'
+      timestamp: serverTimestamp()
     });
-
-    const newDocId = docRef.id; // Retrieve the document ID
-    setDocId(newDocId); // Update the docId value in globals.js
 
     setTweetMessage('');
     setTweetImage('');
@@ -48,11 +44,6 @@ function TweetBox() {
             type="text"
           />
         </div>
-        {tweetMessage.length > MAX_CHARACTER_LIMIT && (
-          <p className="tweetBox__error">
-            Exceeded character limit of {MAX_CHARACTER_LIMIT}
-          </p>
-        )}
 
         <input
           value={tweetImage}
