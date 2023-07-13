@@ -8,7 +8,18 @@ import PublishIcon from '@mui/icons-material/Publish';
 import RepeatIcon from '@mui/icons-material/Repeat';
 
 const Post = forwardRef(
-  ({ displayName, username, verified, text, image, avatar, timestamp }, ref) => {
+  (
+    { displayName, username, verified, text, image, avatar, timestamp },
+    ref
+  ) => {
+    const formattedText = text
+      .split("")
+      .map((char, index) =>
+        index !== 0 && index % 58 === 0 ? `${char}\n` : char
+      )
+      .join("");
+
+    
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">
@@ -29,7 +40,7 @@ const Post = forwardRef(
               <p>{text}</p>
             </div>
           </div>
-          <img src={image} alt="" />
+          <img className="post__image" src={image} alt="" />
           <div className="post__footer">
             <ChatBubbleOutlineIcon className="comment__Icon" fontSize="small" />
             <RepeatIcon className="retweet__Icon" fontSize="small" />

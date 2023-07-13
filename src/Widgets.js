@@ -28,8 +28,8 @@ function Widgets() {
           <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" target="_blank">Cookie Policy</a>
         </div>
         <div className="bottom-links">
-          <a href="https://help.twitter.com/resources/accessibility" target="_blank">Accessibility</a>&nbsp;&nbsp;
-          <a href="https://help.twitter.com/en/twitter-for-business/ads-info" target="_blank">Ads Info</a>
+          <a href="https://help.twitter.com/en/resources/accessibility" target="_blank">Accessibility</a>&nbsp;&nbsp;
+          <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html" target="_blank">Ads Info</a>
         </div>
       </div>
     </footer>

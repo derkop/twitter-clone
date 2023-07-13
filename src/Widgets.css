@@ -1,6 +1,7 @@
 .widgets {
-    flex: 0.3;
-  }
+  flex: 0.3;
+  /* margin-right: 150px; */
+}
   
 .widgets__input {
   display: flex;
@@ -38,10 +39,12 @@
   color: gray;
   justify-content: center;
   text-decoration: none;
+  font-size: 12px;
 }
 
 .footer-links {
   text-align: center;
+  margin-top: 10px;
 }
 
 .top-links {
@@ -57,4 +60,5 @@
   justify-content: center;
   color: gray;
   text-align: center;
+  font-size: 12px;
 }

@@ -3,6 +3,7 @@
   align-items: flex-start;
   border-bottom: 1px solid var(--twitter-background);
   padding-bottom: 10px;
+  width: 580px;
 }
 
 .post__body {
@@ -18,10 +19,15 @@
   justify-content: space-between;
 }
 
+.post__image {
+  margin-bottom: 10px;
+}
+
 .post__headerDescription {
   margin-bottom: 10px;
   font-size: 15px;
-  word-break: break-all;
+  white-space: pre-line;
+  word-break: break-word;
 }
 
 .post__headerText > h3 {

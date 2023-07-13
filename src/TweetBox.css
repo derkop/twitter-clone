@@ -22,7 +22,6 @@
   font-size: 20px;
   border: none;
   outline: none;
-  /* flex-wrap: wrap; */
 }
   
 .tweetBox__imageInput {
@@ -38,7 +37,7 @@
   font-weight: 900 !important;
   text-transform: inherit !important;
   border-radius: 30px !important;
-  width: 80px;
+  width: 80px !important;
   height: 40px !important;
   margin-top: 20px !important;
   margin-left: auto !important;
