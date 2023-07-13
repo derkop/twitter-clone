@@ -14,8 +14,21 @@ function Feed() {
       setPosts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     });
 
+    const handleScroll = (event) => {
+      const feedElement = document.querySelector(".feed");
+      const deltaY = event.deltaY;
+
+      if (feedElement && deltaY !== 0) {
+        event.preventDefault();
+        feedElement.scrollTop += deltaY;
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll, { passive: false });
+
     return () => {
       unsubscribe();
+      window.removeEventListener('wheel', handleScroll);
     };
   }, []);
 

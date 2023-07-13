@@ -31,7 +31,7 @@ const Post = forwardRef(
           </div>
           <img src={image} alt="" />
           <div className="post__footer">
-            <ChatBubbleOutlineIcon className="comment__Icon"fontSize="small" />
+            <ChatBubbleOutlineIcon className="comment__Icon" fontSize="small" />
             <RepeatIcon className="retweet__Icon" fontSize="small" />
             <FavoriteBorderIcon className="likes__Icon" fontSize="small" />
             <PublishIcon className="share__Icon" fontSize="small" />
