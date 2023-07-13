@@ -17,3 +17,6 @@ npm i react-flip-move
 ```
 npm install moment
 ```
+```
+npm install firebase react-router-dom
+```

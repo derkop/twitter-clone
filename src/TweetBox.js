@@ -58,6 +58,7 @@ function TweetBox() {
           type="submit"
           className="tweetBox__tweetButton"
           disabled={tweetMessage.length === 0 || tweetMessage.length > MAX_CHARACTER_LIMIT}
+          disableRipple
         >
           Tweet
         </Button>
