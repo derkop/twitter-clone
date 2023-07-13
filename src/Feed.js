@@ -12,17 +12,14 @@ function Feed() {
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "testing"), (snapshot) => {
-      setPosts(
-        snapshot.docs.map((doc) => {
-          const timestamp = doc.data().timestamp.seconds; // Extract seconds value
-          const formattedTimestamp = formatTimestamp(timestamp);
-          return {
-            id: doc.id,
-            ...doc.data(),
-            timestamp: formattedTimestamp
-          };
-        })
-      );
+      const sortedPosts = snapshot.docs
+        .map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+        .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds); // Sort posts in descending order
+
+      setPosts(sortedPosts);
     });
 
     const handleScroll = (event) => {
@@ -35,19 +32,19 @@ function Feed() {
       }
     };
 
-    window.addEventListener('wheel', handleScroll, { passive: false });
+    window.addEventListener("wheel", handleScroll, { passive: false });
 
     return () => {
       unsubscribe();
-      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener("wheel", handleScroll);
     };
   }, []);
 
   const formatTimestamp = (timestamp) => {
     const now = moment();
-    const tweetTime = moment.unix(timestamp);
-    const diffInSeconds = now.diff(tweetTime, 'seconds');
-  
+    const tweetTime = moment.unix(timestamp.seconds);
+    const diffInSeconds = now.diff(tweetTime, "seconds");
+
     if (diffInSeconds < 60) {
       return `${diffInSeconds}s`;
     } else if (diffInSeconds < 3600) {
@@ -66,7 +63,7 @@ function Feed() {
       const diffInYears = Math.floor(diffInSeconds / 31536000);
       return `${diffInYears}y`;
     }
-  };  
+  };
 
   return (
     <div className="feed">
@@ -86,7 +83,7 @@ function Feed() {
             text={post.text}
             avatar={post.avatar}
             image={post.image}
-            timestamp={post.timestamp}
+            timestamp={formatTimestamp(post.timestamp)}
           />
         ))}
       </FlipMove>
