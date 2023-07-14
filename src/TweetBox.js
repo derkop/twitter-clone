@@ -3,7 +3,6 @@ import './TweetBox.css';
 import { Avatar, Button } from '@mui/material';
 import db from './firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import moment from 'moment';
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState('');
@@ -17,12 +16,12 @@ function TweetBox() {
     e.preventDefault();
 
     await addDoc(postsRef, {
-      displayName: 'Derrick Ko',
-      username: 'derrick.ko',
+      displayName: 'ghost',
+      username: 'ghost',
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar: 'https://i.imgur.com/FfoL3nU.jpg',
+      avatar: 'https://d.newsweek.com/en/full/2005012/langur-monkey.webp?w=790&f=6b178db03c9d5fa24d3caec5ef93cb40',
       timestamp: serverTimestamp()
     });
 

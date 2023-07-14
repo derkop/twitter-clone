@@ -12,9 +12,6 @@
 .tweetBox__input {
   padding: 20px;
   display: flex;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  word-break: break-all;
 }
   
 .tweetBox__input > input {

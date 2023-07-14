@@ -11,7 +11,6 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Button from '@mui/material/Button';
 
-
 function Sidebar() {
     return (
         <div className="sidebar">

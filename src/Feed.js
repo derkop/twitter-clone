@@ -23,6 +23,10 @@ function Feed() {
       setPosts(sortedPosts);
     });
 
+    // ### SCROLL ANYWHERE ON PAGE
+    // Bugs: when moving from one area like Sidebar 
+    // to feed while scroll there is lag
+
     const handleScroll = (event) => {
       const feedElement = document.querySelector(".feed");
       const deltaY = event.deltaY;
@@ -32,7 +36,6 @@ function Feed() {
         feedElement.scrollTop += deltaY;
       }
     };
-
     window.addEventListener("wheel", handleScroll, { passive: false });
 
     return () => {

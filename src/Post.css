@@ -16,7 +16,13 @@
 
 .post__footer {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 110px;
+}
+
+.post__footer-icons {
+  display: flex;
+  gap: 10px;
 }
 
 .post__image {
@@ -30,9 +36,15 @@
   word-break: break-word;
 }
 
+.post__headerText {
+  display: flex;
+  align-items: center;
+}
+
 .post__headerText > h3 {
   font-size: 15px;
   margin-bottom: 5px;
+  margin-right: 10px;
 }
 
 .post__badge {

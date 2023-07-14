@@ -10,6 +10,7 @@ function App() {
 
     {/* COMPONENTS  */}
     {/* Sidebar */}
+    
     <Sidebar/>
     
     {/* Feed */}
