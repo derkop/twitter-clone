@@ -39,10 +39,60 @@
 }
 
 .Text {
-    position: absolute;
-    padding-bottom: 450px;
+    position: fixed;
+    top: 220px;
 }
 
-.google__signin {
-    
+.google__button {
+    position: fixed;
+    top: 330px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 50px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+.google__button img{
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+    border-width: 2px 1px 3px 1px;
+}
+
+.apple__button {
+    position: fixed; 
+    align-items: center;
+    top: 400px;
+    cursor: not-allowed;
+    border-radius: 20px;
+    padding: 10px 52px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+.apple__button img{
+    width: 19px;
+    height: 19px;
+    margin-right: 5px;
+    border-width: 2px;
+}
+
+.email__button {
+    position: fixed;
+    top: 500px;
+    border-radius: 20px;
+    padding: 14px 29px;
+    font-size: 12px;
+    cursor: not-allowed;
+    border: 1px solid lightgrey;
+    background-color: var(--twitter-color);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
 }
