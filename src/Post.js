@@ -9,7 +9,6 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 
 const Post = forwardRef(
   ({ displayName, username, verified, text, image, avatar, timestamp }, ref) => {
-    
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">

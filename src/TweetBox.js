@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './TweetBox.css';
-import { Avatar, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import db from './firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import Avatar from '@mui/material/Avatar';
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState('');
   const [tweetImage, setTweetImage] = useState('');
+  const avatar = localStorage.getItem('avatar');
+  
 
   const postsRef = collection(db, 'testing');
 
@@ -15,13 +18,18 @@ function TweetBox() {
   const sendTweet = async (e) => {
     e.preventDefault();
 
+    if (tweetMessage.length === 0 && tweetImage.length === 0) {
+      // Neither tweet message nor image is provided
+      return;
+    }
+
     await addDoc(postsRef, {
-      displayName: 'ghost',
+      displayName: localStorage.getItem('name'),
       username: 'ghost',
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar: 'https://d.newsweek.com/en/full/2005012/langur-monkey.webp?w=790&f=6b178db03c9d5fa24d3caec5ef93cb40',
+      avatar: {avatar},
       timestamp: serverTimestamp()
     });
 
@@ -33,7 +41,7 @@ function TweetBox() {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src="https://i.imgur.com/FfoL3nU.jpg" />
+          <Avatar src={avatar} alt="User Avatar" />
           <input
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}
@@ -56,7 +64,7 @@ function TweetBox() {
           onClick={sendTweet}
           type="submit"
           className="tweetBox__tweetButton"
-          disabled={tweetMessage.length === 0 || tweetMessage.length > MAX_CHARACTER_LIMIT}
+          disabled={!tweetMessage && !tweetImage}
           disableRipple
         >
           Tweet

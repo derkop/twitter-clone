@@ -5,7 +5,8 @@
     padding-left: 20px;
     min-width: 100px;
     font-weight: 100 !important;
-  }
+    position: relative;
+}
 
 .sidebar__tweet {
     background-color: var(--twitter-color) !important;
@@ -31,4 +32,30 @@
     margin-bottom: 20px;
 }
 
-  
+.sidebar__user {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.sidebar__avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.sidebar__userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar__displayname {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.sidebar__username {
+    font-size: 12px;
+}

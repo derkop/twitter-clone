@@ -10,8 +10,12 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
 
 function Sidebar() {
+    const displayName = localStorage.getItem('name');
+    const avatar = localStorage.getItem("profilePic");
+
     return (
         <div className="sidebar">
             <TwitterIcon className="twitter__icon"/>
@@ -27,7 +31,13 @@ function Sidebar() {
 
             <Button variant="outlined" className="sidebar__tweet" fullWidth disableRipple> Tweet</Button>
             
-
+            <div className="sidebar__user">
+                <Avatar src={avatar} alt="User Avatar" className="sidebar__avatar" />
+                <div className="sidebar__userInfo">
+                    <span className="sidebar__displayname">{displayName}</span>
+                    <span className="sidebar__username">@testuser</span>
+                </div>
+            </div>
 
         </div>
     )

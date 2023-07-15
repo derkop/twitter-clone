@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC6JSJ1worVkmOpOrqrROhZe1SBVZdGxL0",
@@ -15,29 +15,29 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
 export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
 
 export const signInWithGoogle = () => {
-  const history = useHistory();
-
   signInWithPopup(auth, provider)
     .then((result) => {
       const name = result.user.displayName;
       const email = result.user.email;
       const profilePic = result.user.photoURL;
 
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("profilePic", profilePic);
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
+      localStorage.setItem('profilePic', profilePic);
 
-      // Redirect to the desired page after successful login
-      history.push("/app");
+      // Redirect to the main Twitter page
+      window.location.href = 'App';
     })
     .catch((error) => {
       console.log(error);
     });
 };
+
 
 export default db;

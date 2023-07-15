@@ -10,6 +10,7 @@ import FlipMove from "react-flip-move";
 function Feed() {
   const [posts, setPosts] = useState([]);
 
+
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "testing"), (snapshot) => {
       const sortedPosts = snapshot.docs
