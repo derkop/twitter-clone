@@ -5,9 +5,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import AppleLogo from '../assets/AppleLogo.png';
 import { signInWithGoogle } from "../firebase";
+import { useHistory } from "react-router-dom";
 
-function Box() {
-
+function Login() {
+    const history = useHistory();
     return (
         <div className="login__background">
             <div className="box">
@@ -16,7 +17,8 @@ function Box() {
                     <h3>Sign in to Twitter</h3>
                 </div>
 
-                <button className="google__button" onClick={signInWithGoogle} >
+                <button className="google__button" 
+                onClick={() => signInWithGoogle(history)} >
                 <img src={GoogleLogo}/>
                 <span>Sign in with Google</span>
                 </button>
@@ -36,4 +38,4 @@ function Box() {
     );
 }
 
-export default Box;
+export default Login;

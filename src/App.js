@@ -2,24 +2,23 @@ import './App.css';
 import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Widgets from './Widgets';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    // BEM
-    <div className="app">
+    <Router>
+      <div className="app">
+        {/* COMPONENTS */}
+        {/* Sidebar */}
+        <Sidebar />
 
-    {/* COMPONENTS  */}
-    {/* Sidebar */}
-    
-    <Sidebar/>
-    
-    {/* Feed */}
-    <Feed/>
+        {/* Feed */}
+        <Feed />
 
-    {/* Widgets */}
-    <Widgets/>
-
-    </div>
+        {/* Widgets */}
+        <Widgets />
+      </div>
+    </Router>
   );
 }
 
