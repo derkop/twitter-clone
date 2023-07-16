@@ -1,15 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './TweetBox.css';
-import { Button } from '@mui/material';
+import { Avatar, Button } from '@mui/material';
 import db from './firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import Avatar from '@mui/material/Avatar';
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState('');
   const [tweetImage, setTweetImage] = useState('');
-  const avatar = localStorage.getItem('avatar');
-  
+  const avatar = localStorage.getItem("profilePic");
+
 
   const postsRef = collection(db, 'testing');
 
@@ -25,11 +24,11 @@ function TweetBox() {
 
     await addDoc(postsRef, {
       displayName: localStorage.getItem('name'),
-      username: 'ghost',
-      verified: true,
+      username: 'testuser',
+      verified: false,
       text: tweetMessage,
       image: tweetImage,
-      avatar: {avatar},
+      avatar: localStorage.getItem("profilePic"),
       timestamp: serverTimestamp()
     });
 
@@ -41,7 +40,7 @@ function TweetBox() {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src={avatar} alt="User Avatar" />
+          <Avatar src={avatar}/>
           <input
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}

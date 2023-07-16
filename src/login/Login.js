@@ -6,37 +6,46 @@ import GoogleLogo from '../assets/GoogleLogo.png';
 import AppleLogo from '../assets/AppleLogo.png';
 import { signInWithGoogle } from "../firebase";
 
-function Login() {
-    return (
-        <div className="login__background">
-            <div className="box">
-                <TwitterIcon className="twitter__Icon"/>
-                <div className='Text'>
-                    <h3>Sign in to Twitter</h3>
-                </div>
+function Login({ onLogin }) {
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then(() => {
+        // Call the onLogin prop to indicate successful login
+        onLogin();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-                <button className="google__button" 
-                onClick={() => signInWithGoogle} >
-                <img src={GoogleLogo}/>
-                <span>Sign in with Google</span>
-                </button>
-                <h1>{localStorage.getItem("name")}</h1>
-                <h1>{localStorage.getItem("email")}</h1>
-                <img src={localStorage.getItem("profilePic")} />
-
-
-                <button className="apple__button">
-                <img src={AppleLogo}/>
-                <span>Sign in with Apple</span>
-                </button>
-                <p> or</p>
-                <button className="email__button">
-                Sign in with phone or email
-                </button>
-                <CloseIcon className="closeButton" id="closeButton">Close</CloseIcon>
-            </div>
+  return (
+    <div className="login__background">
+      <div className="box">
+        <TwitterIcon className="twitter__Icon" />
+        <div className="Text">
+          <h3>Sign in to Twitter</h3>
         </div>
-    );
+
+        <button className="google__button" onClick={handleGoogleLogin}>
+          <img src={GoogleLogo} alt="" />
+          <span>Sign in with Google</span>
+        </button>
+
+        <button className="apple__button">
+          <img src={AppleLogo} alt="" />
+          <span>Sign in with Apple</span>
+        </button>
+
+        <p>or</p>
+
+        <button className="email__button">Sign in with phone or email</button>
+
+        <CloseIcon className="closeButton">
+          Close
+        </CloseIcon>
+      </div>
+    </div>
+  );
 }
 
 export default Login;

@@ -8,6 +8,7 @@
 }
   
 .box {
+    position: relative;
     width: 600px;
     height: 650px;
     background-color: white;
@@ -18,29 +19,29 @@
     font-size: 24px;
     font-weight: bold;
     border-radius: 20px;
-}
+  }
   
-.closeButton {
+  .closeButton {
     position: absolute;
-    top: 160px;
-    left: 630px;
+    top: 10px;
+    left: 10px;
     padding: 10px;
     border: none;
     cursor: pointer;
     z-index: 1;
-    color:black;
+    color: black;
   }
 
   .twitter__Icon {
     position: absolute;
     color: var(--twitter-color);
     font-size: 35px !important;
-    top: 165px;
+    bottom: 595px;
 }
 
 .Text {
     position: fixed;
-    top: 220px;
+    top: 250px;
 }
 
 .google__button {

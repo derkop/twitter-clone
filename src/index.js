@@ -1,19 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Login from './login/Login';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    {/* <Login /> */}
-    <App/>
-  </React.StrictMode>
-);
+function Index() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  const handleLogin = () => {
+    // Set the login state to true
+    setIsLoggedIn(true);
+  };
+
+  return (
+    <React.StrictMode>
+      {isLoggedIn ? <App /> : <Login onLogin={handleLogin} />}
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.render(<Index />, document.getElementById('root'));
+
 reportWebVitals();
