@@ -22,7 +22,7 @@ function Login({ onLogin }) {
     <div className="login__background">
       <div className="box">
         <TwitterIcon className="twitter__Icon" />
-        <div className="Text">
+        <div className="text">
           <h3>Sign in to Twitter</h3>
         </div>
 
@@ -36,7 +36,7 @@ function Login({ onLogin }) {
           <span>Sign in with Apple</span>
         </button>
 
-        <p>or</p>
+        <p className="or__text">or</p>
 
         <button className="email__button">Sign in with phone or email</button>
 

@@ -5,9 +5,9 @@
     justify-content: center;
     align-items: center;
     background-color: #999999;
-}
+  }
   
-.box {
+  .box {
     position: relative;
     width: 600px;
     height: 650px;
@@ -31,22 +31,25 @@
     z-index: 1;
     color: black;
   }
-
+  
   .twitter__Icon {
     position: absolute;
     color: var(--twitter-color);
     font-size: 35px !important;
-    bottom: 595px;
-}
-
-.Text {
-    position: fixed;
-    top: 250px;
-}
-
-.google__button {
-    position: fixed;
-    top: 330px;
+    top: 30px;
+  }
+  
+  .Text {
+    display: flex;
+  }
+  
+  .or__text {
+    margin: 20px 50px;
+  }
+  
+  .google__button {
+    margin-top: 20px;
+    display: flex;
     align-items: center;
     border-radius: 20px;
     padding: 10px 50px;
@@ -55,19 +58,19 @@
     cursor: pointer;
     border: 1px solid lightgrey;
     background-color: white;
-}
-
-.google__button img{
+  }
+  
+  .google__button img {
     margin-right: 5px;
     height: 20px;
     width: 20px;
     border-width: 2px 1px 3px 1px;
-}
-
-.apple__button {
-    position: fixed; 
+  }
+  
+  .apple__button {
+    margin-top: 20px;
+    display: flex;
     align-items: center;
-    top: 400px;
     cursor: not-allowed;
     border-radius: 20px;
     padding: 10px 52px;
@@ -75,18 +78,17 @@
     font-weight: bold;
     border: 1px solid lightgrey;
     background-color: white;
-}
-
-.apple__button img{
+  }
+  
+  .apple__button img {
     width: 19px;
     height: 19px;
     margin-right: 5px;
     border-width: 2px;
-}
-
-.email__button {
-    position: fixed;
-    top: 500px;
+  }
+  
+  .email__button {
+    margin-top: 20px;
     border-radius: 20px;
     padding: 14px 29px;
     font-size: 12px;
@@ -96,4 +98,5 @@
     font-size: 14px;
     font-weight: bold;
     color: white;
-}
+  }
+  
