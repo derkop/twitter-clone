@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   padding-left: 20px;
+  padding-bottom: 15px;
   width: 100%;
 }
 
@@ -54,11 +55,11 @@
 }
 
 .sidebar__displayname {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 2px;
 }
 
 .sidebar__username {
-    font-size: 12px;
+    font-size: 14px;
 }
