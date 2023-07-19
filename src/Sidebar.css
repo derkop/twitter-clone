@@ -3,7 +3,7 @@
     flex: 0.25;
     margin-top: 20px;
     padding-left: 20px;
-    min-width: 100px;
+    width: 100%;
     font-weight: 100 !important;
     position: relative;
 }
@@ -16,7 +16,7 @@
     text-transform: inherit !important;
     border-radius: 30px !important;
     height: 50px !important;
-    width: 230px !important;
+    width: 95% !important;
     margin-top: 20px !important;
     font-size: 14px !important;
 }
@@ -62,4 +62,8 @@
 
 .sidebar__username {
     font-size: 14px;
+}
+
+.sidebar-option{ 
+    cursor: not-allowed !important;
 }
