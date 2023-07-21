@@ -11,6 +11,22 @@ function Feed() {
   const [posts, setPosts] = useState([]);
 
 
+  // Quicksort implementation
+  const quicksort = (arr) => {
+    if (arr.length <= 1) return arr;
+    const pivot = arr[0];
+    const left = [];
+    const right = [];
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i].timestamp.seconds > pivot.timestamp.seconds) {
+        left.push(arr[i]);
+      } else {
+        right.push(arr[i]);
+      }
+    }
+    return [...quicksort(left), pivot, ...quicksort(right)];
+  };
+
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "testing"), (snapshot) => {
       const sortedPosts = snapshot.docs
@@ -18,10 +34,11 @@ function Feed() {
           id: doc.id,
           ...doc.data(),
         }))
-        .filter((post) => post.timestamp !== null) // Exclude posts with null timestamp
-        .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds); // Sort posts in descending order
+        .filter((post) => post.timestamp !== null); // Exclude posts with null timestamp
 
-      setPosts(sortedPosts);
+      const sortedPostsByTimestamp = quicksort(sortedPosts);
+
+      setPosts(sortedPostsByTimestamp);
     });
 
     // ### SCROLL ANYWHERE ON PAGE
